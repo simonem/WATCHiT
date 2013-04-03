@@ -32,7 +32,7 @@
 /* change accordingly to prototype
  * when uploading the sketch */
 #define _PROTOTYPE_1
-#define DEBUG 1
+#define DEBUG 0
 
 // pins
 #define LED_BATT	2
@@ -67,7 +67,7 @@
 #define TAG_MOOD12	"0101A850E71F" // :)
 #define TAG_MOOD21	"0101A85CD723" // :|
 #define TAG_MOOD22	"0101ACA32926" // :|
-#define TAG_MOOD31	"0101A89CE3D7?" // :(
+#define TAG_MOOD31	"0101A89CE3D7" // :(
 #define TAG_MOOD32	"0101AC9FFBC8" // :(
 
 
@@ -107,7 +107,8 @@ void setup()
 	Serial.begin(9600);
 	rfid_serial.begin(9600);
 	xbee_serial.begin(19200);
-  
+        
+        //xbee_serial.println("Hello");
 	if(DEBUG) xbee_printf("[DEBUG] WATCHiT v%s online", VERSION);
 	
 	// be sure to listen from this interface
