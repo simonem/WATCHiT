@@ -1,0 +1,36 @@
+#Component List
+##Common
+* 3Pin X9
+* 2Pin X8
+* Protoboard X4
+* Cables
+
+##Power
+* 850Mha 3.7V Battery
+* Power switch
+* Diode
+* 2pin battery socket
+* 5V Step-up
+
+##CPU
+* Arduino mini 3v
+* Green LED
+* Yellow LED
+* Red LED
+* Lilypad vibro
+* Transistor
+
+##RFID
+* ID-20 RFID
+* ID-20 Breakout board
+
+##Comm
+* Zigbee breakout board
+* Zigbee/BluetoothBee
+* Greed LED
+* Red LED
+
+##GPS
+* UP-501 GPS Chop
+* Socket 3V battery + battery
+* Withe LED
