@@ -51,6 +51,7 @@
 #define MSG_MOOD1  1
 #define MSG_MOOD2  2
 #define MSG_MOOD3  3
+#define MSG_STEP   4
 
 // RFID tag identifiers
 #define TAG_PERSON_ID	0
@@ -59,6 +60,7 @@
 #define TAG_MOOD3_ID	3
 #define TAG_TEST_ID	254
 #define TAG_FLUSH_ID	255
+#define TAG_STEP_ID 4
 
 // RFID tag serials
 #define TAG_PERSON1     "01068DCD6324"
@@ -69,6 +71,7 @@
 #define TAG_MOOD22	"0101ACA32926" // :|
 #define TAG_MOOD31	"0101A89CE3D7" // :(
 #define TAG_MOOD32	"0101AC9FFBC8" // :(
+#define TAG_STEP        "5100FDAB4E49"
 
 
 // misc
@@ -82,6 +85,7 @@
   #define MOOD1_STRING	"I'm happy"
   #define MOOD2_STRING	"I'm so and so"
   #define MOOD3_STRING	"I'm sad"
+  #define STEP_STRING   "step"
 #endif
 
 
@@ -171,6 +175,7 @@ void loop()
 			case TAG_MOOD1_ID:	send_msg(MSG_MOOD1); break;
 			case TAG_MOOD2_ID:	send_msg(MSG_MOOD2); break;
 			case TAG_MOOD3_ID:	send_msg(MSG_MOOD3); break;
+                        case TAG_STEP_ID:       send_msg(MSG_STEP); break;
 		}
 		vibrate(tag_id);
 	}	
@@ -192,6 +197,7 @@ void send_msg(int msg_type)
 			case (MSG_MOOD1)	: msg = MOOD1_STRING; break;
 			case (MSG_MOOD2)	: msg = MOOD2_STRING; break;
 			case (MSG_MOOD3)	: msg = MOOD3_STRING; break;
+                        case (MSG_STEP)         : msg = STEP_STRING; break;
 		}
 
 		// format our msg string
@@ -233,6 +239,8 @@ int get_tag_id(char *tag)
 		return TAG_MOOD2_ID;
 	else if (!strcmp(tag, TAG_MOOD31) || !strcmp(tag, TAG_MOOD32))
 		return TAG_MOOD3_ID;
+        else if (!strcmp(tag, TAG_STEP))
+		return TAG_STEP_ID;
 	return -1;
 }
 
@@ -270,6 +278,15 @@ void vibrate(int event)
 			digitalWrite(VIBRATOR, HIGH);
 		} break;
 		case TAG_MOOD3_ID: {
+			digitalWrite(VIBRATOR, LOW);
+			delay(900);
+			digitalWrite(VIBRATOR, HIGH);
+			delay(300);
+			digitalWrite(VIBRATOR, LOW);
+			delay(900);
+			digitalWrite(VIBRATOR, HIGH);
+		} break;
+	case TAG_STEP_ID: {
 			digitalWrite(VIBRATOR, LOW);
 			delay(900);
 			digitalWrite(VIBRATOR, HIGH);
