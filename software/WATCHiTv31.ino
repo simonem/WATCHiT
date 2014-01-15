@@ -1,5 +1,5 @@
 /**
- * WATCHiTv3 Arduino code
+ * WATCHiTv31 (JACKET) Arduino code
  *
  * Copyright (c) 2013, Emanuele Di Santo, Simone Mora
  * All rights reserved.
