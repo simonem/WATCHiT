@@ -1,10 +1,10 @@
 /**
  * WATCHiTv3 Arduino code
  * Updated:	07/11/2012, Trondheim
- * Author:	Emanuele 'lemrey' Di Santo
+ * Author:	Emanuele 'lemrey' Di Santo, Simone Mora
  * Contact:	lemrey@gmail.com
  *
- * Copyright (c) 2012, Emanuele Di Santo
+ * Copyright (c) 2012, Emanuele Di Santo, Simone Mora
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met: 
